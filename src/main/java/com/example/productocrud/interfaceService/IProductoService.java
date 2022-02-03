@@ -8,7 +8,7 @@ import com.example.productocrud.model.Producto;
 public interface IProductoService {
 
 	public List<Producto> listar();
-	public Optional<Producto> listarId(int ref);
+	public Optional<Producto> listarRef(int referencia);
 	public int guardar(Producto p);
-	public void eliminar(int ref);
+	public void eliminar(int referencia);
 }

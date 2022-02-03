@@ -11,6 +11,8 @@
 
 <body>
 	<div class="container mt-4">
+	<a th:href="@{/nuevo}" class="btn btn-primary">Nuevo</a>
+	<br><br>
 		<table class="table">
 			<thead>
 				<tr>
@@ -29,13 +31,18 @@
 					<td th:text="${producto.talla}"></td>
 					<td th:text="${producto.cantidad}"></td>
 					<td>
-						<a class="btn btn-warning">Editar</a>
-						<a class="btn btn-danger">Eliminar</a>
+						<a th:href="@{/editar/}+${producto.referencia}" class="btn btn-warning">Editar</a>
+						<a th:onclick="eliminar([[${producto.referencia}]])" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="/funciones.js"></script>
 </body>
 
 </html>

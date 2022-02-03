@@ -22,20 +22,23 @@ public class ProductoService implements IProductoService {
 	}
 
 	@Override
-	public Optional<Producto> listarId(int ref) {
-		return null;
+	public Optional<Producto> listarRef(int ref) {
+		return data.findById(ref);
 	}
 
 	@Override
 	public int guardar(Producto p) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res = 0;
+		Producto producto = data.save(p);
+		if (!producto.equals(null)) {
+			res = 1;
+		}
+		return res;
 	}
 
 	@Override
 	public void eliminar(int ref) {
-		// TODO Auto-generated method stub
-		
+		data.deleteById(ref);
 	}
 
 	
